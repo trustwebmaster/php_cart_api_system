@@ -25,7 +25,7 @@ class CartFactory extends Factory
     {
         return [
             'product_identifier' => uniqid(),
-            'description' => $this->faker->paragraphs(10),
+            'description' => $this->faker->paragraph(10),
             'user_id' => function(){
                    return User::factory()->create()->id;
             }

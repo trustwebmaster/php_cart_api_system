@@ -30,7 +30,7 @@ class CartPolicy
      */
     public function view(User $user, Cart $cart)
     {
-        //
+        return $user->id == $cart->user_id;
     }
 
     /**
@@ -53,7 +53,7 @@ class CartPolicy
      */
     public function update(User $user, Cart $cart)
     {
-        return $user->id === $cart->user_id;
+        return $user->id == $cart->user_id;
     }
 
     /**
@@ -65,7 +65,7 @@ class CartPolicy
      */
     public function delete(User $user, Cart $cart)
     {
-        //
+        return $user->id == $cart->user_id;
     }
 
     /**
@@ -89,6 +89,6 @@ class CartPolicy
      */
     public function forceDelete(User $user, Cart $cart)
     {
-        //
+        return $user->id == $cart->user_id;
     }
 }

@@ -50,9 +50,16 @@ class CartController extends Controller
     {
         $this->authorize('view', $cart);
 
+        if ($cart) {
+            return response()->json([
+                'data' => new CartResource($cart)
+            ], 200);
+
+        }
+
         return response()->json([
-            'data' => new CartResource($cart)
-        ], 200 );
+            'message' => 'The Cart you provided does not match the Cart',
+        ], 400);
 
     }
 
@@ -96,4 +103,6 @@ class CartController extends Controller
         ], 204);
 
     }
+
+
 }

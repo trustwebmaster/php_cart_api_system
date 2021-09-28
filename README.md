@@ -63,16 +63,21 @@ $ php artisan key:generate
 $ php artisan migrate
 $ php artisan breeze:install
 $ php artisan db:seed
+
+#Test command 
+$ php artisan test --filter CartTest
 ```
 
 
 ###USERS
+
 They are already two installed users
-```
+
+```sh
 email:user1@yiya.com
 password:user12345
 ```
-```
+```sh
 email:user2@yiya.com
 password:user12345
 ```
@@ -84,5 +89,3 @@ password:user12345
 - implement a front-page for the store
 - integrate with a real payment gateway
 
-License
-----

@@ -24,12 +24,12 @@ This Project is An API Key System
 ## Language, Framework, and Datastore. Choices Made!
 - This System is implemented using php laravel framework
 - Sqlite is used as a Database for this application
-- The Cart data is persisted in the Database to be in-compliance with the RESTfulness Guidelines and best practices and avoid using the sessions to save the state of the user ([Why it's a bad thing to use sessions in a RESTful API](https://stackoverflow.com/a/20311981)), I also Avoided using the cookies to be the only holder of the cart data becuase cookies can hold only a small amount of data and also for the huge marketing benifits of tracking down users Cart data and using it to bug them with what products they forgot in thier carts.
+
 
 
 
 # API documentation:
-All API End points and documentation can be found at:
+All API End points 
 
 The following is just a simple list of the api end points:
 

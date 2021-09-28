@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -29,3 +30,4 @@ Route::group(['middleware' => 'auth:api'] , function () {
 
 //Cart Routes
 Route::apiResource('cart' , CartController::class)->middleware('auth');
+Route::apiResource('products' , ProductController::class)->middleware('auth');

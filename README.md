@@ -24,7 +24,6 @@ This Project is An API Key System
 ## Language, Framework, and Datastore. Choices Made!
 - This System is implemented using php laravel framework
 - Sqlite is used as a Database for this application
-- The Cart data is persisted in the Database to be in-compliance with the RESTfulness Guidelines and best practices and avoid using the sessions to save the state of the user ([Why it's a bad thing to use sessions in a RESTful API](https://stackoverflow.com/a/20311981)), I also Avoided using the cookies to be the only holder of the cart data becuase cookies can hold only a small amount of data and also for the huge marketing benifits of tracking down users Cart data and using it to bug them with what products they forgot in thier carts.
 
 
 
@@ -33,11 +32,13 @@ All API End points and documentation can be found at:
 
 The following is just a simple list of the api end points:
 
->POST /api/auth/signup
+>POST /api/create/user
 
->POST /api/auth/login
+>POST /api/login
 
->GET /api/auth/logout
+>GET /api/logged/user
+
+>GET /api/logout
 
 >GET /api/products/
 
@@ -45,17 +46,11 @@ The following is just a simple list of the api end points:
 
 >POST /api/carts/
 
->GET /api/carts/:CartToken
+>GET /api/carts/:id
 
->POST /api/carts/:CartToken
+>PATCH /api/carts/:id
 
->POST /api/carts/:CartToken/checkout
-
->DEL /api/carts/:CartToken
-
->GET /api/orders
-
->GET /api/orders/:orderID
+>DEL /api/carts/:id
 
 
 # Installation
@@ -70,6 +65,17 @@ $ php artisan breeze:install
 $ php artisan db:seed
 ```
 
+
+###USERS
+They are already two installed users
+```
+email:user1@yiya.com
+password:user12345
+```
+```
+email:user2@yiya.com
+password:user12345
+```
 
 
 ### Todos

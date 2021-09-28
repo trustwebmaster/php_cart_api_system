@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,34 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-
-Route::get('/user-create' , function (Request $request) {
-    User::create([
-        'name' => 'Trust Musikiri',
-        'email' => 'pauro@gmail.com',
-        'password' => \Illuminate\Support\Facades\Hash::make('pauro@12345')
-    ]);
-});
-
-Route::get('/login',
-    function (Request $request) {
-//        $details = [
-//            'email' => 'devcs@gmail.com',
-//            'password' => 'pauro@12345'
-//        ];
-
-        $details = request()->only(['email' , 'password']);
-
-        return  auth()->attempt($details);
-
-    });
-
-Route::middleware('auth:api')->get('/me' , function () {
-    return auth()->user();
-});
+//User Authorisation Routes
+Route::post('/create/user' , [UserController::class , 'signup']);
+Route::post('/login', [UserController::class , 'login']);
+Route::get('/logout', [UserController::class , 'logout']);
+Route::middleware('auth:api')->get('/logged/user' , [UserController::class , 'loggedUser']);
 
 Route::apiResource('cart' , CartController::class)->middleware('auth');

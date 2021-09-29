@@ -60,6 +60,34 @@ Install the dependencies and start the server to test the Api.
 ```sh
 $ Composer install
 $ php artisan key:generate
+```
+
+
+ ###For  sqlite database follow the instruction below
+ - Create a file called database.sqlite under the folder database 
+ - Then set your database connection to sqlite in the .env file
+  
+####Example
+ ```sh
+ DB_CONNECTION=sqlite
+ ```
+
+
+
+ ####For other mysql database configuration 
+ - Please set your  database connection to mysql  , username and password for your database 
+ 
+####Example 
+```shell
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=database_name
+DB_USERNAME=root
+DB_PASSWORD=password
+```
+
+```sh
 $ php artisan migrate
 $ php artisan breeze:install
 $ php artisan db:seed

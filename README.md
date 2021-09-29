@@ -32,23 +32,87 @@ All API End points and documentation can be found at:
 
 The following is just a simple list of the api end points:
 
+- CREATE USER 
+ ```shell
+   Fields 
+   $ name
+   $ password
+   $ email
+```
 >POST /api/create/user
 
+- LOG IN USER (GENERATE API KEY)
+
+```shell
+   Fields  
+   $ password
+   $ email
+```
 >POST /api/login
 
+- GET USER WHO IS CURRENTLY LOGGED IN
+```shell
+   Fields  
+   $ password
+   $ email
+```
 >GET /api/logged/user
+
+-  USER LOGOUT
+```shell
+   Fields  
+   $ password
+   $ email
+```
 
 >GET /api/logout
 
+- GET PRODUCTS 
+```shell
+   ALL SEEDED
+```
+### PLEASE USE THE ACCESS_TOKEN GENERATED (API_KEY) FOR AUTHORISATION FOR THE NEXT PROCEDURES 
+
 >GET /api/products/
 
+- VIEW ONE  PRODUCT
+```shell
+   Fields  
+   $ password
+   $ email
+```
 >GET /api/products/:id
 
->POST /api/carts/
+- CREATE CART 
+```shell
+   Fields  
+   $ product_identifier
+   $ description
+```
+>GET /api/carts/
+
+- VIEW  CART
+```shell
+   Fields  
+ 
+```
 
 >GET /api/carts/:id
 
+- UPDATE  CART
+```shell
+   Fields  
+   $ product_identifier
+   $ description
+```
+
 >PATCH /api/carts/:id
+
+- DELETE  CART
+```shell
+   Fields  
+   $ cart_id
+```
 
 >DEL /api/carts/:id
 

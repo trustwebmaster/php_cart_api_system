@@ -30,6 +30,8 @@ This Project is An API Key System
 # API documentation:
 All API End points and documentation can be found at:
 
+##In the Headers include Key = Accept and Value = application/json for every request 
+
 The following is just a simple list of the api end points:
 
 - CREATE USER 
